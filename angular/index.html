@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myapp">
+<head>
+  <meta charset="utf-8">
+  <title>Angularの練習</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="myscript.js"></script>
+</head>
+<body>
+  <h1>Angularの練習</h1>
+  <div ng-controller="MainController">
+    <form novalidate name="myForm" ng-submit="addUser()">
+      <p>
+        <select ng-model="user.color" ng-options="'label:'+color for color in ['red', 'blue', 'pink']" ng-init="user.color='red'"></select>
+      </p>
+      <p><input type="submit" value="add"></p>
+
+    </form>
+    <pre>{{user|json}}</pre>
+  </div>
+</body>
+</html>
